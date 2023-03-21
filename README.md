@@ -14,6 +14,7 @@ docker run --name=act_runner \
     -e INSTANCE=GITEA_URL \
     -e TOKEN=RUNNER_TOKEN \
     -v path_to_data:/config \
+    -v /var/run/docker.sock:/var/run/docker.sock \
     martabal/act_runner
 ```
 
@@ -30,5 +31,6 @@ services:
       - TOKEN=RUNNER_TOKEN
     volumes:
         - path_to_data:/config
+        - /var/run/docker.sock:/var/run/docker.sock
     restart: unless-stopped
 ```
