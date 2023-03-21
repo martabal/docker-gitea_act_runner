@@ -14,8 +14,9 @@ else
   if [ -n "${INSECURE}" ]; then
       optional="${optional} --insecure=${INSECURE}"
   fi
-  /app/act_runner/act_runner register --instance ${INSTANCE} --token ${TOKEN} --no-interactive ${optional}
+  exec /app/act_runner/act_runner register --instance ${INSTANCE} --token ${TOKEN} --no-interactive ${optional}
   cp /app/act_runner/.runner /config
 fi
 
+echo "Starting Act runner"
 exec /app/act_runner/act_runner daemon &> /dev/null
