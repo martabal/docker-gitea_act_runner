@@ -1,9 +1,8 @@
 # Docker Act runner
 
+[![Publish Release](https://github.com/martabal/docker-act_runner/actions/workflows/release.yml/badge.svg)](https://github.com/martabal/docker-act_runner/actions/workflows/release.yml)
 
 Act runner is a runner for Gitea based on Gitea fork of act .
-
-
 
 ## Run it
 
