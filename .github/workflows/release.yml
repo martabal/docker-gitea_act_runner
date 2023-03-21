@@ -78,5 +78,5 @@ jobs:
           build-args: |
             ARCH=arm64
           tags: |
-            martabal/act_runner:${{ inputs.tags }}
-            martabal/act_runner:latest
+            martabal/act_runner:arm-${{ inputs.tags }}
+            martabal/act_runner:arm-latest
