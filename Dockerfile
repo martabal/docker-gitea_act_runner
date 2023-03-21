@@ -7,5 +7,4 @@ RUN apk add curl && \
     chmod +x ./act_runner && \
     mkdir -p /config
 
-
-ENTRYPOINT ["sh", "/app/act_runner/runner.sh"]
+CMD ["/bin/sh", "/app/act_runner/runner.sh"]
