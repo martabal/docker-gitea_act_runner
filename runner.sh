@@ -1,9 +1,21 @@
 #!/bin/sh
 
+optional=''
+
 if [ -f "/config/.runner" ]; then
   ln -s /config/.runner /app/act_runner/.runner
+
 else
-  /app/act_runner/act_runner register --instance ${INSTANCE} --token ${TOKEN} --no-interactive
+  if [ -n "${NAME}" ]; then
+      optional+=" --name="${NAME}
+  fi
+  if [ -n "${LABELS}" ]; then
+      optional+=" --labels=${LABELS}"
+  fi
+  if [ -n "${INSECURE}" ]; then
+      optional+=" --insecure=${INSECURE}"
+  fi
+  /app/act_runner/act_runner register --instance ${INSTANCE} --token ${TOKEN} --no-interactive ${optional}
   cp /app/act_runner/.runner /config
 fi
 
