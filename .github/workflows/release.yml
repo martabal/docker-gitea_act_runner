@@ -39,6 +39,9 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64
           push: ${{ github.event_name != 'pull_request' }}
+          build-args: |
+            ARCH=amd64
+
           tags: |
             martabal/act_runner:${{ inputs.tags }}
             martabal/act_runner:latest
@@ -72,6 +75,8 @@ jobs:
           file: ./Dockerfile.aarch64
           platforms: linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
+          build-args: |
+            ARCH=arm64
           tags: |
             martabal/act_runner:${{ inputs.tags }}
             martabal/act_runner:latest
