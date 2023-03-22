@@ -1,4 +1,4 @@
-# Docker Act runner
+# Docker for Gitea Act runner
 
 [![Publish Release](https://github.com/martabal/docker-act_runner/actions/workflows/release.yml/badge.svg)](https://github.com/martabal/docker-act_runner/actions/workflows/release.yml)
 
@@ -49,5 +49,5 @@ services:
 | `-e TOKEN` | Runner token from gitea |  |
 | `-e NAME` | Runner name |  |
 | `-e LABELS` | Runner tags, comma separated |  |
-| `-e INSECURE` | If check server's certificate if it's https protocol | false  |
+| `-e INSECURE` | Check server's certificate if using https protocol | false  |
 | `-v path_to_data:/config` | Where .runner config file is stored |  |
