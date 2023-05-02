@@ -19,7 +19,7 @@ RUN apk add curl && \
     else \
         ARCHITECTURE=amd64; \
     fi && \
-    curl https://dl.gitea.com/act_runner/main/act_runner-main-linux-${ARCHITECTURE} -o act_runner &&\
+    curl https://dl.gitea.com/act_runner/main/act_runner-main-linux-${ARCHITECTURE} -o act_runner && \
     chmod +x ./act_runner && \
     mkdir -p /config
     
