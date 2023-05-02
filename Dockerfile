@@ -1,8 +1,11 @@
 FROM alpine:3.17
+
 ARG TARGETPLATFORM
+
 LABEL maintainer="martabal"
+
 WORKDIR /app/act_runner
-COPY runner.sh .
+
 RUN apk add curl && \
     if [ "$TARGETPLATFORM" = "linux/amd64" ]; \
         then \
@@ -20,5 +23,6 @@ RUN apk add curl && \
     chmod +x ./act_runner && \
     mkdir -p /config
     
+COPY runner.sh .  
 
 CMD ["/bin/sh", "/app/act_runner/runner.sh"]
